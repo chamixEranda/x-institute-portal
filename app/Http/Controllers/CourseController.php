@@ -59,11 +59,16 @@ class CourseController extends Controller
 
         DB::beginTransaction();
 
-        $this->courseService->storeCourse($request);
+        try {
+            $this->courseService->storeCourse($request);
 
-        DB::commit();
+            DB::commit();
+            toastr()->success('Course Registration Successful');
+        } catch (Exception $th) {
+            DB::rollBack();
+            toastr()->error($th->getMessage());
+        }
         
-        toastr()->success('Course Registration Successful');
         return back();
     }
 

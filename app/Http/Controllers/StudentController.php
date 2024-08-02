@@ -65,11 +65,18 @@ class StudentController extends Controller
 
         DB::beginTransaction();
 
-        $this->studentService->storeStudent($request);
+        try {
+            $this->studentService->storeStudent($request);
 
-        DB::commit();
+            DB::commit();
+            toastr()->success('Student Registration Successful');
+
+        } catch (\Exception $th) {
+
+            DB::rollBack();
+            toastr()->error($th->getMessage());
+        }
         
-        toastr()->success('Student Registration Successful');
         return back();
     }
 

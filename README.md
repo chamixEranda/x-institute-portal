@@ -31,3 +31,7 @@ This project is a web portal for X Institute to manage its student and course da
 
 2. **Create the virtual host**
    APP_URL=http://x_institute.localhost
+
+## Admin login credentials ##
+username : admin@gmail.com
+password: 123456

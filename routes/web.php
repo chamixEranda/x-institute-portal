@@ -21,12 +21,14 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('user.logout');
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
+    //student routes
     Route::group(['prefix' => 'students', 'as' => 'students.'], function () {
         Route::get('/resgister', [App\Http\Controllers\StudentController::class, 'index'])->name('resgister');
         Route::post('/resgister/store', [App\Http\Controllers\StudentController::class, 'store'])->name('resgister.store');
         Route::get('search', [App\Http\Controllers\StudentController::class, 'search'])->name('search');
     });
 
+    //course routes
     Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
         Route::resource('/', App\Http\Controllers\CourseController::class);
     });

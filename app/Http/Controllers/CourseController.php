@@ -13,7 +13,7 @@ class CourseController extends Controller
     protected $courseService;
 
     public function __construct(CourseService $courseService) {
-        // Injecting the UserService instance into the controller.
+        // Injecting the courseService instance into the controller.
         $this->courseService = $courseService;
     }
 

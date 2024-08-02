@@ -27,5 +27,7 @@ This project is a web portal for X Institute to manage its student and course da
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/x-institute-admin-portal.git
-   cd x-institute-admin-portal
+   git clone https://github.com/chamixEranda/x-institute-portal.git
+
+2. **Create the virtual host**
+   APP_URL=http://x_institute.localhost
